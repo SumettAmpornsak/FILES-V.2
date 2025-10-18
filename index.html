@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Sumett Ampornsak" />
+  <meta name="description"
+    content="ระบบบริการซอฟต์แวร์ออนไลน์ V.2 แหล่งรวมซอฟต์แวร์คุณภาพสำหรับทุกความต้องการ  ของ Sumett Ampornsak" />
+  <meta name="keywords"
+    content="HTML, CSS, JavaScript, AdminLTE, Bootstrap, Google Font, Animate.css, AOS, SweetAlert2, SumettAmpornsak, GCD-Calculator V.2, Calculator, AppCenter, ระบบบริการซอฟต์แวร์ออนไลน์" />
+
+  <!-- OG / Twitter -->
+  <meta property="og:title" content="by Sumett Ampornsak" />
+  <meta property="og:description"
+    content="ระบบบริการซอฟต์แวร์ออนไลน์ V.2 แหล่งรวมซอฟต์แวร์คุณภาพสำหรับทุกความต้องการ  ของ Sumett Ampornsak" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:title" content="ระบบบริการซอฟต์แวร์ออนไลน์ V.2 By Sumett Ampornsak" />
+  <meta name="twitter:description"
+    content="ระบบบริการซอฟต์แวร์ออนไลน์ V.2 แหล่งรวมซอฟต์แวร์คุณภาพสำหรับทุกความต้องการ  ของ Sumett Ampornsak" />
+  <title>ระบบบริการซอฟต์แวร์ออนไลน์ V.2 | หน้าหลัก</title>
+  <link rel="icon" href="Images/logo.jpg" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Itim:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    :root {
+      --primary-color: #4361ee;
+      --secondary-color: #3a0ca3;
+      --accent-color: #4cc9f0;
+      --light-color: #f8f9fa;
+      --dark-color: #212529;
+    }
+
+    body {
+      font-family: "Itim", sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background: linear-gradient(135deg,
+          var(--primary-color),
+          var(--secondary-color)) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg,
+          var(--primary-color),
+          var(--secondary-color));
+      color: white;
+      padding: 100px 0 80px;
+      border-radius: 0 0 30px 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-position: bottom;
+    }
+
+    .hero-section h1 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 3rem;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 20px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      flex-grow: 1;
+      text-align: justify;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 0.875rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .card-footer {
+      background: transparent;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 15px 20px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg,
+          var(--primary-color),
+          var(--secondary-color));
+      border: none;
+      border-radius: 50px;
+      padding: 10px 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 15px rgba(67, 97, 238, 0.3);
+    }
+
+    .btn-outline-primary {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .category-filter {
+      margin-bottom: 30px;
+    }
+
+    .category-btn {
+      margin: 5px;
+      border-radius: 50px;
+    }
+
+    .category-btn.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .search-container {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6c757d;
+    }
+
+    .search-input {
+      padding-left: 45px;
+      border-radius: 50px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .file-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #6c757d;
+      margin-top: 10px;
+    }
+
+    .file-size,
+    .file-date {
+      display: flex;
+      align-items: center;
+    }
+
+    .file-size i,
+    .file-date i {
+      margin-right: 5px;
+    }
+
+    footer {
+      background: var(--dark-color);
+      color: white;
+      padding: 30px 0 15px;
+      margin-top: 60px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .center-loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      color: white;
+      display: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .center-loading h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .lds-ellipsis {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+
+    .lds-ellipsis div {
+      position: absolute;
+      top: 33.33333px;
+      width: 13.33333px;
+      height: 13.33333px;
+      border-radius: 50%;
+      background: white;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+
+    .lds-ellipsis div:nth-child(1) {
+      left: 8px;
+      animation: lds-ellipsis1 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(2) {
+      left: 8px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(3) {
+      left: 32px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(4) {
+      left: 56px;
+      animation: lds-ellipsis3 0.6s infinite;
+    }
+
+    @keyframes lds-ellipsis1 {
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes lds-ellipsis3 {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    @keyframes lds-ellipsis2 {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(24px, 0);
+      }
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      color: #6c757d;
+    }
+
+    .no-results i {
+      font-size: 50px;
+      margin-bottom: 15px;
+      color: #dee2e6;
+    }
+
+    .stats-container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    .floating-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .floating-element {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+    }
+
+    .floating-element:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-element:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      top: 60%;
+      left: 80%;
+      animation-delay: -5s;
+    }
+
+    .floating-element:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      top: 80%;
+      left: 20%;
+      animation-delay: -10s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+
+      100% {
+        transform: translateY(0) rotate(360deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 60px 0 40px;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .card img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" data-aos="fade-down" data-aos-duration="800">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="Images/logo.jpg" width="30" height="30" class="d-inline-block align-top"
+          alt="Logo ระบบบริการซอฟต์แวร์ออนไลน์ V.2" />
+        ระบบบริการซอฟต์แวร์ออนไลน์ V.2
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="bi bi-house-fill me-1"></i>หน้าแรก</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://sumettampornsak.vercel.app/"><i
+                class="bi bi-house me-1"></i>APP CENTER</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="floating-elements">
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+    </div>
+    <div class="container text-center position-relative" style="z-index: 1">
+      <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        ระบบบริการซอฟต์แวร์ออนไลน์ V.2
+      </h1>
+      <p id="randomText" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+        แหล่งรวมซอฟต์แวร์คุณภาพสำหรับทุกความต้องการ
+      </p>
+      <div class="mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+        <!-- <button class="btn btn-light btn-lg me-2">เริ่มต้นใช้งาน</button>
+                <button class="btn btn-outline-light btn-lg">เรียนรู้เพิ่มเติม</button> -->
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Statistics -->
+    <div class="stats-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      <div class="row text-center">
+        <div class="col-md-3 col-6 stat-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">ซอฟต์แวร์</div>
+        </div>
+        <div class="col-md-3 col-6 stat-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+          <div class="stat-number">120+</div>
+          <div class="stat-label">ดาวน์โหลด</div>
+        </div>
+        <div class="col-md-3 col-6 stat-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">ปลอดภัย</div>
+        </div>
+        <div class="col-md-3 col-6 stat-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">บริการ</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="row mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+      <div class="col-md-8 offset-md-2">
+        <div class="search-container">
+          <i class="bi bi-search search-icon"></i>
+          <input type="text" id="searchInput" class="form-control search-input" placeholder="ค้นหาซอฟต์แวร์..." />
+        </div>
+      </div>
+    </div>
+
+    <div class="category-filter text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+      <button class="btn btn-outline-primary category-btn active" data-category="all">
+        ทั้งหมด
+      </button>
+      <button class="btn btn-outline-primary category-btn" data-category="activation">
+        เครื่องมือเปิดใช้งาน
+      </button>
+      <button class="btn btn-outline-primary category-btn" data-category="utility">
+        ยูทิลิตี้
+      </button>
+      <button class="btn btn-outline-primary category-btn" data-category="remote">
+        รีโมท
+      </button>
+      <button class="btn btn-outline-primary category-btn" data-category="fonts">
+        ฟอนต์
+      </button>
+    </div>
+
+    <!-- Loading Animation -->
+    <div class="center-loading">
+      <h3>กำลังโหลดข้อมูล...</h3>
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- File Container -->
+    <div class="row" id="fileContainer">
+      <!-- KMSpico -->
+      <div class="col-lg-4 col-md-6 file-card mb-4" data-category="activation" data-aos="flip-left"
+        data-aos-duration="800" data-aos-delay="100">
+        <div class="card">
+          <img src="Images/kmspico-logo.jpeg" alt="KMSpico โปรแกรมสำหรับ Activate Windows และ Office" loading="lazy" />
+          <div class="card-body">
+            <h2 class="card-title">KMSpico v10.2.0</h2>
+            <p class="card-text">
+              KMSpico เป็นโปรแกรมสำหรับ Activate Windows และ Office
+              ที่ใช้งานง่ายและมีประสิทธิภาพสูง รองรับ Windows ทุกรุ่นและ
+              Microsoft Office หลายเวอร์ชัน
+            </p>
+            <div class="file-info">
+              <div class="file-size"><i class="bi bi-hdd"></i> 4.2 MB</div>
+              <div class="file-date">
+                <i class="bi bi-calendar"></i> 15/03/2025
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://drive.google.com/file/d/14pOViNy5-dzsENKdCwJBcTU6mWddJ-nL/view?usp=sharing"
+              class="btn btn-primary" target="_blank">
+              <i class="bi bi-download me-2"></i>ดาวน์โหลด
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- KMS Tools -->
+      <div class="col-lg-4 col-md-6 file-card mb-4" data-category="activation" data-aos="flip-left"
+        data-aos-duration="800" data-aos-delay="200">
+        <div class="card">
+          <img src="Images/kmstool.jpg" alt="KMS Tools โปรแกรมช่วย Activate Windows" loading="lazy" />
+          <div class="card-body">
+            <h2 class="card-title">KMS Tools 08.03.2025</h2>
+            <p class="card-text">
+              Ratiborus KMS Tools Portable เป็นชุดเครื่องมือสำหรับเปิดใช้งาน
+              Windows และ Office ที่อัปเดตเป็นประจำ รองรับผลิตภัณฑ์ Microsoft
+              เกือบทั้งหมด
+            </p>
+            <div class="file-info">
+              <div class="file-size"><i class="bi bi-hdd"></i> 58.7 MB</div>
+              <div class="file-date">
+                <i class="bi bi-calendar"></i> 08/03/2025
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://drive.google.com/file/d/1LYbsy-W7iiByabJUqbsa8JtybAssZA9K/view?usp=sharing"
+              class="btn btn-primary" target="_blank">
+              <i class="bi bi-download me-2"></i>ดาวน์โหลด
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RealVNC -->
+      <div class="col-lg-4 col-md-6 file-card mb-4" data-category="remote" data-aos="flip-left" data-aos-duration="800"
+        data-aos-delay="300">
+        <div class="card">
+          <img src="Images/Realvnc.jpg" alt="RealVNC ซอฟต์แวร์การเข้าถึงระยะไกล" />
+          <div class="card-body">
+            <h2 class="card-title">RealVNC v4.5.3</h2>
+            <p class="card-text">
+              RealVNC เป็นซอฟต์แวร์การเข้าถึงระยะไกลที่ทรงพลัง
+              ช่วยให้คุณควบคุมคอมพิวเตอร์เครื่องอื่นผ่านเครือข่ายได้อย่างปลอดภัยและมีประสิทธิภาพ
+            </p>
+            <div class="file-info">
+              <div class="file-size"><i class="bi bi-hdd"></i> 12.5 MB</div>
+              <div class="file-date">
+                <i class="bi bi-calendar"></i> 10/02/2025
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://drive.google.com/file/d/17xr6hUuQYikfJwe9GP-NODNTDjDj7fg_/view?usp=drive_link"
+              class="btn btn-primary" target="_blank">
+              <i class="bi bi-download me-2"></i>ดาวน์โหลด
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- WinRAR -->
+      <div class="col-lg-4 col-md-6 file-card mb-4" data-category="utility" data-aos="flip-right"
+        data-aos-duration="800" data-aos-delay="400">
+        <div class="card">
+          <img src="Images/winrar.jpg" alt="WinRAR โปรแกรมบีบอัดไฟล์" />
+          <div class="card-body">
+            <h2 class="card-title">WinRAR 6.24</h2>
+            <p class="card-text">
+              WinRAR เป็นโปรแกรมบีบอัดไฟล์ที่ได้รับความนิยมสูงสุด
+              รองรับรูปแบบไฟล์บีบอัดหลายชนิด เช่น ZIP, RAR, 7Z และอื่นๆ
+              พร้อมฟังก์ชันการเข้ารหัส
+            </p>
+            <div class="file-info">
+              <div class="file-size"><i class="bi bi-hdd"></i> 3.2 MB</div>
+              <div class="file-date">
+                <i class="bi bi-calendar"></i> 05/02/2025
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://drive.google.com/file/d/1q2ASeJl3BKsAHnbR8ss8Rr7B1qSmrySp/view?usp=drive_link"
+              class="btn btn-primary" target="_blank">
+              <i class="bi bi-download me-2"></i>ดาวน์โหลด
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foxit Reader -->
+      <div class="col-lg-4 col-md-6 file-card mb-4" data-category="utility" data-aos="flip-right"
+        data-aos-duration="800" data-aos-delay="500">
+        <div class="card">
+          <img src="Images/foxit.jpg" alt="Foxit Reader โปรแกรมอ่านไฟล์ PDF" />
+          <div class="card-body">
+            <h2 class="card-title">Foxit PDF Reader</h2>
+            <p class="card-text">
+              Foxit Reader เป็นโปรแกรมอ่านไฟล์ PDF
+              ที่มีน้ำหนักเบาแต่ประสิทธิภาพสูง
+              รองรับการแสดงผลที่รวดเร็วและการทำงานหลายฟังก์ชัน
+            </p>
+            <div class="file-info">
+              <div class="file-size"><i class="bi bi-hdd"></i> 78.9 MB</div>
+              <div class="file-date">
+                <i class="bi bi-calendar"></i> 20/01/2025
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://drive.google.com/file/d/19SKyUV7kZF3-nK6dMR7eCaeRT0o7eosb/view?usp=drive_link"
+              class="btn btn-primary" target="_blank">
+              <i class="bi bi-download me-2"></i>ดาวน์โหลด
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fonts -->
+      <div class="col-lg-4 col-md-6 file-card mb-4" data-category="fonts" data-aos="flip-right" data-aos-duration="800"
+        data-aos-delay="600">
+        <div class="card">
+          <img src="Images/typetruefonts.jpg" alt="ฟอนต์สำหรับงานราชการ" />
+          <div class="card-body">
+            <h2 class="card-title">ฟอนต์ราชการไทย</h2>
+            <p class="card-text">
+              รวมฟอนต์ที่ระบบราชการไทยนิยมใช้ เช่น ฟอนต์บาร์โค้ด
+              ฟอนต์มาตรฐานสำหรับงานเอกสารราชการ และฟอนต์อื่นๆ
+              ที่จำเป็นสำหรับการทำงาน
+            </p>
+            <div class="file-info">
+              <div class="file-size"><i class="bi bi-hdd"></i> 25.3 MB</div>
+              <div class="file-date">
+                <i class="bi bi-calendar"></i> 12/01/2025
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://drive.google.com/file/d/1Ff3fL1_EnxsRFHcFDNiFcL7NhBK_2qkx/view?usp=sharing"
+              class="btn btn-primary" target="_blank">
+              <i class="bi bi-download me-2"></i>ดาวน์โหลด
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div id="noResults" class="no-results" style="display: none" data-aos="fade-up" data-aos-duration="800">
+      <i class="bi bi-search"></i>
+      <h4>ไม่พบผลลัพธ์ที่ค้นหา</h4>
+      <p>ลองเปลี่ยนคำค้นหาหรือหมวดหมู่</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+    <div class="container text-center">
+        <p class="mb-0 text-white">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          ระบบบริการซอฟต์แวร์ออนไลน์ V.2 All rights reserved.
+        </p>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- เพิ่ม AOS JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // เริ่มต้น AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+        mirror: false,
+      });
+
+      // Show loading animation
+      $(".center-loading").show();
+
+      // Typewriter effect
+      const originalText = "แหล่งรวมซอฟต์แวร์คุณภาพสำหรับทุกความต้องการ";
+
+      function typeText(text) {
+        let index = 0;
+        const speed = 50;
+        const interval = setInterval(() => {
+          if (index < text.length) {
+            $("#randomText").text(text.substring(0, index + 1));
+            index++;
+          } else {
+            clearInterval(interval);
+            setTimeout(() => {
+              randomTyping();
+            }, 3000);
+          }
+        }, speed);
+      }
+
+      function randomTyping() {
+        const characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let randomText = "กำลังโหลดข้อมูล";
+        let randomIndex = 0;
+        const typingSpeed = 100;
+        const interval = setInterval(() => {
+          if (randomIndex < 10) {
+            randomText += ".";
+            $("#randomText").text(randomText);
+            randomIndex++;
+          } else {
+            clearInterval(interval);
+            setTimeout(() => {
+              typeText(originalText);
+            }, 500);
+          }
+        }, typingSpeed);
+      }
+
+      typeText(originalText);
+
+      // Hide loading animation after 1.5 seconds
+      setTimeout(function () {
+        $(".center-loading").fadeOut();
+      }, 1500);
+
+      // Search functionality
+      $("#searchInput").on("input", function () {
+        filterFiles();
+      });
+
+      // Category filter functionality
+      $(".category-btn").on("click", function () {
+        $(".category-btn").removeClass("active");
+        $(this).addClass("active");
+        filterFiles();
+      });
+
+      function filterFiles() {
+        let searchValue = $("#searchInput").val().toLowerCase();
+        let activeCategory = $(".category-btn.active").data("category");
+        let visibleCount = 0;
+
+        $(".file-card").each(function () {
+          let title = $(this).find(".card-title").text().toLowerCase();
+          let description = $(this).find(".card-text").text().toLowerCase();
+          let category = $(this).data("category");
+
+          let matchesSearch =
+            title.includes(searchValue) || description.includes(searchValue);
+          let matchesCategory =
+            activeCategory === "all" || category === activeCategory;
+
+          if (matchesSearch && matchesCategory) {
+            $(this).show();
+            visibleCount++;
+          } else {
+            $(this).hide();
+          }
+        });
+
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          $("#noResults").show();
+        } else {
+          $("#noResults").hide();
+        }
+      }
+
+      // Download confirmation
+      $(".btn-primary").on("click", function (e) {
+        e.preventDefault();
+        const href = $(this).attr("href");
+        const title = $(this).closest(".card").find(".card-title").text();
+
+        Swal.fire({
+          title: "ยืนยันการดาวน์โหลด",
+          text: `คุณต้องการดาวน์โหลด ${title} ใช่หรือไม่?`,
+          icon: "question",
+          showCancelButton: true,
+          confirmButtonText: "ดาวน์โหลด",
+          cancelButtonText: "ยกเลิก",
+          confirmButtonColor: "#4361ee",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.open(href, "_blank");
+          }
+        });
+      });
+
+      // Show loading when page is about to unload
+      $(window).on("beforeunload", function () {
+        $(".center-loading").show();
+      });
+
+      // Refresh AOS when filtering files
+      $(document).on("DOMSubtreeModified", "#fileContainer", function () {
+        AOS.refresh();
+      });
+    });
+  </script>
+</body>
+
+</html>
